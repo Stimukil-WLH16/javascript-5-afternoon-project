@@ -23,12 +23,13 @@ function outer() {
 */
   
 // Code Here
-
+let inner = outer()
 
 
 //Once you do that, invoke inner.
 
 //Code Here
+inner()
 
 
 
@@ -52,7 +53,7 @@ function callFriend(name) {
 */
 
 //Code Here
-
+let callJake = callFriend('Jake', '435-555-9248')
 
 
 ////////// PROBLEM 3 //////////
@@ -62,15 +63,20 @@ function callFriend(name) {
 */
 
 //Code Here
-
+function makeCounter(){
+  let count = 0
+  return function(){
+    return count += 1
+  }
+}
 
 
 //Uncomment this once you make your function
-//   var count = makeCounter();
-//   count(); // 1
-//   count(); // 2
-//   count(); // 3
-//   count(); // 4
+  var count = makeCounter();
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
@@ -87,8 +93,16 @@ function callFriend(name) {
 
 function counterFactory(value) {
   // Code here.
-
+  
   return {
+    inc: function(){
+      value += 1
+      return value;
+    },
+    dec: function(){
+      value -= 1
+      return value;
+    }
 
   };
 }
